@@ -138,6 +138,30 @@ temp.veg  <- c(22, 26, 27, 25, 28, 30, 25, 21, 23, 27, 25, 22) # Solo com vegeta
 temp.exp <- c(35, 31, 37, 38, 40, 32, 31, 33, 37, 32, 30, 33) # Solo exposto
 t.test(temp.veg, temp.solo, paired = TRUE) # Médias das amostras apresentam diferenças
 
+# Teste Kolmogorov-Smirnov
+# 
+# Determina se duas distribuições de probabilidades diferem uma da outra
+# Determinar se uma distribuição subjacente difere de uma distribuição teórica
+# O teste detcta diferença nas amostras em relação a escla, skewness
+# Para amostras simples testa a distância entre dados observados e uma distribuição ideal
+# Checa a normalidade d euma distribuição
+# 
+# Teste para amostra simples
+
+runif(30)
+prob.germ <- c(0.676434301, 0.448928425, 0.853052609, 0.473205741, 0.164652520, 0.278773492,
+               0.335581518, 0.166231713, 0.118047846, 0.535419890, 0.398960461, 0.820369403,
+               0.596322970, 0.469289374, 0.745087779, 0.273681890,
+               0.194832060, 0.734254131, 0.091754496, 0.003610658, 0.395827094, 0.181725072,
+               0.399015331, 0.484991677, 0.810088073, 0.984973677, 0.469517935,
+               0.100947151, 0.043670013, 0.150498043)
+
+ks.test(prob.germ, "pnorm")
+hist(prob.germ)
+
+# Reaultado: p < 0.05; rejeita-se a hipótese nula, distribuição diferente da normal
+# As distribuições não são iguais
+
 # Teste binomial
 
 # Proporção de pessoas pobres que fizeram teste de covid é menor que a prop de ricos

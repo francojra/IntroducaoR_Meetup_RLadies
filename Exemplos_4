@@ -117,6 +117,12 @@ var.test(controle, experimento) # Amostras não apresentam diferenças na variâ
 t.test(controle, experimento) # Médias das amostras são diferentes
 # Cálculo da média, sd, variância e boxplot
 
+data("ToothGrowth")
+t.test(ToothGrowth$len[ToothGrowth$supp == "VC"], ToothGrowth$len[ToothGrowth$supp == "OJ"])
+
+# Resultado:p < 0.05. A média das amostras entre os tratamentos são diferentes 
+# (hipótese alternativa).
+
 # Teste Wilcoxon
 
 # Teste não paramétrico alternativo ao teste t
